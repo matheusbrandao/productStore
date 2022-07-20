@@ -1,10 +1,10 @@
-plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
-}
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdk 32
+    buildToolsVersion "29.0.3"
 
     defaultConfig {
         applicationId "com.matheusbrandao.productstore"
@@ -51,4 +51,7 @@ dependencies {
     implementation "androidx.navigation:navigation-runtime-ktx:$navigationVersion"
     implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+
+    //DI - Koin
+    implementation "io.insert-koin:koin-android:$koinVersion"
 }

@@ -7,10 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.matheusbrandao.productstore.R
 import com.matheusbrandao.productstore.databinding.FragmentProductListBinding
+import com.matheusbrandao.productstore.viewModel.ProductListViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ProductListFragment : Fragment() {
 
     private lateinit var binding: FragmentProductListBinding
+    private val viewModel by viewModel<ProductListViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
