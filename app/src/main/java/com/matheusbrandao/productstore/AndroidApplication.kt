@@ -2,6 +2,7 @@ package com.matheusbrandao.productstore
 
 import android.app.Application
 import com.matheusbrandao.productstore.di.presentationModule
+import com.matheusbrandao.productstore.di.serviceModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -16,7 +17,8 @@ class AndroidApplication : Application() {
             androidContext(this@AndroidApplication)
             modules(
                 listOf(
-                    presentationModule
+                    presentationModule,
+                    serviceModule
                 )
             )
         }

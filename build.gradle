@@ -4,6 +4,7 @@ buildscript {
         kotlinVersion = '1.5.30'
         navigationVersion = '2.3.5'
         koinVersion = '3.2.0'
+        retrofitVersion = '2.6.0'
     }
 }
 
