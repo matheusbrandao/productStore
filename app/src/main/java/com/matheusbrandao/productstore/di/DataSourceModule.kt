@@ -6,6 +6,8 @@ import org.koin.dsl.module
 val dataSourceModule = module {
 
     factory {
-        ProductDataSourceRemote(get())
+        ProductDataSourceRemote(
+            service = get()
+        )
     }
 }

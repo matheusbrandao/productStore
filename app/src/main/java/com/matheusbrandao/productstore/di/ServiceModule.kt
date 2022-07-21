@@ -7,13 +7,28 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-const val BASE_URL = "BASE_URL"
+const val BASE_URL = "https://bdk0sta2n0.execute-api.eu-west-1.amazonaws.com/"
 
 val serviceModule = module {
     factory { AuthInterceptor() }
-    factory { provideOkHttpClient(get()) }
-    factory { provideProductApi(get()) }
-    single { provideRetrofit(get()) }
+
+    factory {
+        provideOkHttpClient(
+            authInterceptor = get()
+        )
+    }
+
+    factory {
+        provideProductApi(
+            retrofit = get()
+        )
+    }
+
+    single {
+        provideRetrofit(
+            okHttpClient = get()
+        )
+    }
 }
 
 fun provideOkHttpClient(authInterceptor: AuthInterceptor): OkHttpClient =
