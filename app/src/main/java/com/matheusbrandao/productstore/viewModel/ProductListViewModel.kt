@@ -22,7 +22,7 @@ class ProductListViewModel(
 
     fun fetchProductList() {
         viewModelScope.launch {
-            repository.fetchProductListFromRemote()
+            repository.fetchProductList()
                 .onStart {
                     _productList.postValue(Result.Loading)
                 }

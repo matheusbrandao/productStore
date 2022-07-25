@@ -12,7 +12,7 @@ class ProductRepository(
     private val dispatcher: CoroutineDispatcher
 ) {
 
-    fun fetchProductListFromRemote(): Flow<ProductList> = flow {
+    fun fetchProductList(): Flow<ProductList> = flow {
         val response = dataSourceRemote.fetchProductList()
         emit(response)
     }.flowOn(dispatcher)
